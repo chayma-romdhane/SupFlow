@@ -1,0 +1,84 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  background: #111827;
+  padding: 32px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.login-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.2fr) minmax(320px, 1fr);
+  min-height: calc(100dvh - 64px);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.35),
+    0 10px 30px rgba(15, 23, 42, 0.2);
+}
+.visual-panel {
+  position: relative;
+  background-image:
+    linear-gradient(150deg, rgba(21, 94, 239, 0.85), rgba(79, 70, 229, 0.85)),
+    url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #f8fafc;
+  padding: 48px 56px;
+  display: flex;
+  align-items: flex-end;
+}
+.visual-panel__content {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+.visual-panel__eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+.visual-panel__title {
+  margin: 0 0 16px;
+  font-size: clamp(2.2rem, 3vw, 2.9rem);
+  line-height: 1.2;
+}
+.visual-panel__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+.visual-panel__glow {
+  position: absolute;
+  inset: 20% auto auto 50%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 60%);
+  filter: blur(20px);
+  opacity: 0.8;
+  transform: translateX(-50%);
+}
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    background: #ffffff;
+}
+.form-panel__inner {
+  width: 100%;
+   max-width: 360px;
+  padding: 48px 56px;
+}
+.form-panel__header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+.form-panel__header p {
+  margin: 8px 0 32px;
+  color: #6b7280;
+}
