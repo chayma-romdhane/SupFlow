@@ -1,8 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes';
-import {app} from './app/app';
+import { AppComponent } from './app/app';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(app, {
-  providers: []
-}).catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig).catch(err => console.error(err));

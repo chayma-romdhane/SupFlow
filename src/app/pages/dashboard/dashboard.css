@@ -2,26 +2,36 @@
   display: block;
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+
   background: #f3f6fd;
 }
 
-/* Layout */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
 .dashboard-page {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 240px 1fr;
+  background: #f3f6fd;
   min-height: 100vh;
+  border-radius: 0;   /* plus de coins arrondis */
+  box-shadow: none;   /* plus de “carte” centrée */
 }
 
-/* Sidebar */
+/* Sidebar blanche */
 
 .sidebar {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: #ffffff;
   padding: 24px 18px;
+  border-right: 1px solid #e4ebff;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
 }
 
 .sidebar-logo {
@@ -31,83 +41,71 @@
 }
 
 .logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #2563eb, #22c1c3);
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
 }
 
 .logo-text {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
+  color: #111827;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  color: #9ca3af;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: #6b7280;
   text-decoration: none;
   font-size: 14px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.nav-item .nav-icon {
-  width: 20px;
-  text-align: center;
+.nav-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: #eef2ff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
 }
 
 .nav-item:hover {
-  background: #111827;
-  color: #e5e7eb;
+  background: #f3f6ff;
+  color: #111827;
 }
 
 .nav-item.active {
   background: #e5f0ff;
-  color: #1d4ed8;
+  color: #2563eb;
 }
 
 /* Main layout */
 
 .main-layout {
-  padding: 24px 32px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  background: linear-gradient(180deg, #f3f6fd 0%, #f5f7ff 100%);
 }
 
-/* Topbar */
+/* Top bar (search + user) */
 
 .topbar {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
   align-items: center;
-}
-
-.topbar-left {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.page-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.page-subtitle {
-  font-size: 13px;
-  color: #6b7280;
+  padding: 18px 26px 14px;
+  border-bottom: 1px solid #e4ebff;
+  background: #ffffff;
 }
 
 .topbar-right {
@@ -124,11 +122,11 @@
 .search-box input {
   width: 100%;
   border-radius: 999px;
-  border: none;
-  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  padding: 9px 14px;
   padding-right: 40px;
   font-size: 13px;
-  background: #e5ecff;
+  background: #f9fafb;
   outline: none;
 }
 
@@ -137,24 +135,24 @@
   border: none;
   padding: 8px 10px;
   background: #ffffff;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
   cursor: pointer;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: #ffffff;
-  padding: 6px 10px 6px 16px;
+  padding: 6px 12px 6px 14px;
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
 }
 
 .user-text {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .user-name {
@@ -178,25 +176,47 @@
   font-weight: 600;
 }
 
-/* Content grid */
+/* Carte principale blanche */
+
+.main-card {
+  padding: 22px 26px 26px;
+}
+
+.page-header {
+  margin-bottom: 18px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Grille du contenu */
 
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 24px;
+  gap: 20px;
 }
 
-/* Cards */
+/* Cartes internes */
 
 .card {
   background: #ffffff;
   border-radius: 24px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-  padding: 20px 22px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+  padding: 18px 20px;
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #111827;
 }
@@ -208,9 +228,9 @@
 }
 
 .small-heading {
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
 }
 
 /* Project overview */
@@ -218,8 +238,8 @@
 .project-overview {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 18px;
-  margin-bottom: 22px;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
 .project-main .card-title {
@@ -229,42 +249,42 @@
 .project-carousel {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: stretch;
   gap: 10px;
+  align-items: stretch;
 }
 
 .carousel-btn {
   border-radius: 999px;
   border: none;
-  width: 30px;
-  height: 30px;
-  background: #e5ecff;
+  width: 28px;
+  height: 28px;
+  background: #ecf2ff;
   color: #1d4ed8;
   font-weight: 700;
   cursor: pointer;
 }
 
 .project-info {
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
   border-radius: 24px;
-  padding: 16px 18px;
+  padding: 18px;
+  background: radial-gradient(circle at top left, #4f46e5 0%, #2563eb 40%, #1d4ed8 100%);
   color: #f9fafb;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .project-info-inner {
-  width: 100%;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  row-gap: 4px;
   column-gap: 8px;
+  row-gap: 4px;
   font-size: 13px;
 }
 
 .project-info-inner .label {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .project-info-inner .value {
@@ -272,30 +292,23 @@
 }
 
 .project-footer {
-  grid-column: 1 / -1;
-  margin-top: 10px;
   display: grid;
-  grid-template-columns: 1fr minmax(0, 3fr) auto;
+  grid-template-columns: 1.2fr minmax(0, 3fr) auto;
   align-items: center;
   gap: 8px;
   font-size: 12px;
 }
 
-.status-label {
-  opacity: 0.9;
-}
-
 .status-bar {
   height: 6px;
   border-radius: 999px;
-  background: rgba(248, 250, 252, 0.3);
   overflow: hidden;
+  background: rgba(248, 250, 252, 0.3);
 }
 
 .status-bar-fill {
-  width: 60%;
+  width: 70%;
   height: 100%;
-  border-radius: inherit;
   background: #fbbf24;
 }
 
@@ -310,11 +323,11 @@
   padding-left: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .overall-progress {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #2563eb;
 }
@@ -349,7 +362,7 @@
 }
 
 .dot-green {
-  background: #10b981;
+  background: #16a34a;
 }
 
 .dot-red {
@@ -372,12 +385,12 @@
 /* Activity log */
 
 .activity-log {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .table-wrapper {
   overflow-x: auto;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .activity-table {
@@ -388,7 +401,7 @@
 
 .activity-table th,
 .activity-table td {
-  padding: 8px 6px;
+  padding: 7px 6px;
   text-align: left;
 }
 
@@ -404,7 +417,7 @@
 .status-pill {
   display: inline-flex;
   align-items: center;
-  padding: 3px 10px;
+  padding: 3px 9px;
   border-radius: 999px;
   font-size: 11px;
 }
@@ -419,10 +432,8 @@
 .column-right {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
-
-/* Milestones */
 
 .milestones-card .emoji {
   font-size: 18px;
@@ -431,20 +442,20 @@
 .milestones-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .milestone-item {
   border-radius: 18px;
-  padding: 12px 12px;
+  padding: 10px 12px;
   background: #f9fafb;
   font-size: 13px;
 }
 
 .milestone-item h3 {
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #111827;
 }
 
@@ -457,7 +468,7 @@
 
 .pill-green {
   background: #ecfdf3;
-  color: #166534;
+  color: #16a34a;
 }
 
 .pill-orange {
@@ -475,7 +486,7 @@
 .workload-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .workload-row {
@@ -491,6 +502,10 @@
   align-items: center;
   gap: 6px;
   color: #4b5563;
+}
+
+.workload-label .icon {
+  font-size: 16px;
 }
 
 .workload-bar {
@@ -523,23 +538,32 @@
 }
 
 /* Team + Reminder */
-
 .team-reminder-grid {
+  /* au lieu de flex: on passe en grid pour mieux contrôler */
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  align-items: stretch;
+  column-gap: 18px;
+  margin-top: 16px;
 }
 
+/* Carte Team */
+.team-card {
+  position: relative;
+  border-radius: 26px;
+}
+
+/* Avatars */
 .team-avatars {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin: 12px 0;
+  gap: 8px;
+  margin: 14px 0 10px;
 }
 
 .avatar {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
   background: #e5f0ff;
   color: #1d4ed8;
@@ -551,85 +575,80 @@
 }
 
 .avatar-add {
-  background: #1d4ed8;
-  color: white;
+  background: #2563eb;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }
 
+/* Input + bouton Add */
 .task-input-row {
-  display: flex;
-  gap: 8px;
-  margin-top: 4px;
+  position: relative;
+  margin-top: 6px;
 }
 
 .task-input-row input {
-  flex: 1;
+  width: 100%;
   border-radius: 999px;
   border: 1px solid #e5e7eb;
-  padding: 8px 12px;
+  padding: 9px 1px 9px 1px;
   font-size: 13px;
+  background: #ffffff;
 }
 
-.btn-primary {
+.task-input-row .add-btn {
+  position: absolute;
+  top: 50%;
+  right: 3px;                 /* plus de valeur négative */
+  transform: translateY(-50%);
   border-radius: 999px;
   border: none;
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 13px;
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  color: white;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
   cursor: pointer;
 }
 
+/* Carte Reminder */
 .reminder-card {
-  background: #f97316;
+  border-radius: 26px;
+  background: #ff7a1a;
   color: #ffffff;
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 20px;
+  /* on s’assure que la carte ne dépasse pas */
+  max-width: 260px;
+  justify-self: end;          /* plaque-la à droite mais dans le cadre */
 }
 
 .reminder-card .card-title {
   color: #ffffff;
+  margin-bottom: 8px;
 }
 
 .reminder-text {
   font-size: 13px;
-  margin-top: 8px;
+  line-height: 1.4;
 }
 
-/* Responsive */
-
-@media (max-width: 1024px) {
-  .dashboard-page {
-    grid-template-columns: 220px 1fr;
-  }
-
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
-
+/* Responsive : empiler sur mobile */
+@media (max-width: 900px) {
   .team-reminder-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .dashboard-page {
-    grid-template-columns: 1fr;
+    row-gap: 14px;
   }
 
-  .sidebar {
-    display: none; /* à remplacer plus tard par un vrai toggle si tu veux */
+  .reminder-card {
+    max-width: 100%;
+    justify-self: stretch;
   }
 
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .topbar-right {
-    width: 100%;
-  }
-
-  .search-box {
-    flex: 1;
+  .task-input-row .add-btn {
+    right: 12px;
   }
 }
