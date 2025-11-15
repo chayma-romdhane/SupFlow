@@ -6,10 +6,15 @@
         <span class="logo-text">SupFlow Logo</span>
       </div>
       <nav class="sidebar-nav">
-        <a class="nav-item active" href="#">
+        <a
+          class="nav-item"
+          routerLink="/dashboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <span>Dashboard</span>
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item" routerLink="/projects" routerLinkActive="active">
           <span>Projects</span>
         </a>
         <a class="nav-item" href="#">

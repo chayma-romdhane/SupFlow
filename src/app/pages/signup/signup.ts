@@ -16,15 +16,21 @@ export class SignupComponent {
   showConfirmPassword = false;
 
   constructor(private fb: FormBuilder) {
-    this.signupForm = this.fb.group({
-      fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      role: ['', Validators.required],
-      programYear: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
-      acceptTerms: [false, Validators.requiredTrue],
-    });
+    this.signupForm = this.fb.group(
+      {
+        fullName: ['', Validators.required],
+        email: [
+          '',
+          [Validators.required, Validators.email, Validators.pattern(/^[A-Za-z0-9._%+-]+@supcom\.tn$/i)],
+        ],
+        role: ['', Validators.required],
+        programYear: ['', Validators.required],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+        acceptTerms: [false, Validators.requiredTrue],
+      },
+      { validators: [SignupComponent.passwordsMatchValidator] }
+    );
   }
 
   togglePasswordVisibility(field: 'password' | 'confirm') {
@@ -42,5 +48,11 @@ export class SignupComponent {
     }
     console.log('Sign up data: ', this.signupForm.value);
     // ici tu feras l'appel API plus tard
+  }
+
+  private static passwordsMatchValidator(group: FormGroup) {
+    const password = group.get('password')?.value;
+    const confirm = group.get('confirmPassword')?.value;
+    return password && confirm && password !== confirm ? { passwordsMismatch: true } : null;
   }
 }
