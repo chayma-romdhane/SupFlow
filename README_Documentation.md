@@ -1,4 +1,7 @@
-# SupFlow — Documentation Succincte
+<img width="924" height="733" alt="image" src="https://github.com/user-attachments/assets/393d1b45-a44c-4262-b452-e5723f6f5ed1" /># SupFlow — Documentation Succincte
+## SupFlow – Documentation de Projet
+
+## Projet réalisé par Chayma Romdhane & Yassmine El Arbi – Sup’Com
 
 ## 1. Choix des frameworks : Angular & Spring Boot
 
@@ -20,6 +23,17 @@ Spring Boot a été retenu pour construire une API backend robuste car il offre 
 - **Scalabilité et performance** adaptées aux applications professionnelles.
 - **Écosystème mature** et largement utilisé dans l’industrie.
 
+  
+| Couche          | Technologie                                         |
+| --------------- | --------------------------------------------------- |
+| Frontend        | Angular 17, TypeScript, HTML, SCSS                  |
+| Backend         | Spring Boot 2.7.0 (REST API), Maven                 |
+| Sécurité        | Encryption des mots de passe avec `PasswordEncoder` |
+| Base de données | SQL Server 2022 + Hibernate/JPA                     |
+| ORM             | Hibernate                                           |
+| Serveur         | Tomcat intégré (port 9090)                          |
+
+
 ## 2. Fonctionnalités développées
 
 Les principales fonctionnalités de SupFlow sont :
@@ -39,8 +53,13 @@ Les principales fonctionnalités de SupFlow sont :
 
 ## 3. Étapes de lancement du projet
 
-## 4. Lancer le projet
+## Lancer le projet
 
+### Base de données 
+Nom de la base : supflow_db
+Tables principales :
+- User
+- Project
 ### Back-end (Spring Boot)
 
 1. Se déplacer dans le dossier backend 
@@ -66,4 +85,4 @@ ng serve
 4. Application disponible à :
 http://localhost:4200/
 
-Projet développé par Chayma Romdhane& Yassmine El Arbi.
+Projet développé par Chayma Romdhane & Yassmine El Arbi.
